@@ -1,0 +1,7 @@
+inherit -> o atributo herda o valor do elemento pai.
+float -> Faz o elemento com a propriedade perder a propriedade in block.
+margin -> Espaçamento entre os elementos dentro de um elemento pai.
+Display -> defini tipo de comportamento do elemento (inline, block e etc), se vai ou não exibir o elemento.
+box-sizing -> Você pode forçar o padding + borda + etc ... a se encaixar no tamanho que de fato você quer considerar
+overflow: hidden -> Esconde tudo que estrapolar o tamanho da box
+overflow: scrow -> Adiciona barras de rolagem para elementos que ultrapassem a

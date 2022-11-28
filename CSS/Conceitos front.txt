@@ -1,0 +1,8 @@
+Box model -> Caixas retangulares que definem o espaço real ocupado pelos elementos.
+Margin Collapse -> Por padrão, o CSS faz as margens de top de um elemento, e a margem de botton de
+um elemento logo acima, se sobreporem.
+
+Elementos inline igonoram a propriedade altura e largura.
+A página HTML tem a altura calculada com base nas somas da altura dos elementos filhos, assim como o body,
+portanto, elementos que calculam a altura usando o valor de altura do body e html poderão sofrer 
+um comportamento estranho.
