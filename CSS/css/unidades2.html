@@ -4,12 +4,51 @@
     <meta charset="UTF-8">
     <title>Unidades #02</title>
     <style>
-        /* ... */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .unidadeAbsoluta {
+            position: absolute;
+            font-size: 40px;
+            padding: 40px;
+            border: solid 5px black;
+            margin: 30px;
+            top: 50px;
+            left: 50px;
+        }
+        .unidadeRelativa {
+            position: absolute;
+            font-size: 2em;
+            border: 1vw solid blueviolet;
+            padding: 10px;
+        }
+        .fora {
+            position: relative;
+            background-color: orange;
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+            overflow: hidden;   
+        }
+        .dentro {
+            background-color: blueviolet;
+            height: 100px;
+            width: 100%;
+            position: static; /*conteudo*/
+            position: relative; /*conteudo*/
+            position: absolute; /*conteudo + padding*/
+            /* position: fixed; View port + respeita padding */
+            /* overflow: hidden; */
+        }
     </style>
 </head>
 <body>
-    <div class="fora">
-        <div class="dentro"></div>
-    </div>
+        <div class="unidadeAbsoluta">Olá</div>
+        <div class="unidadeRelativa">Olá 2</div>
+
+        <div class="fora">
+            <div class="dentro"></div>
+        </div>
 </body>
 </html>

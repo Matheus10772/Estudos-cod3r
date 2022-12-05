@@ -1,0 +1,15 @@
+Unidades Absolutas ->
+    *px (pixel)
+    *cm(centímetro)
+    *mm (milímetro) 
+
+ViewPort -> 
+    *vh -> Tamanho da altura da view port. 1vh é 1/100 da altura da view port
+    *vw -> Tamanho da largura da view port. 1vw é 1/100 da largura da view port
+
+Font ->
+    *rem -> Tamanho de fonte do elemento raiz da hieraquia
+    *em -> Tamanho de fonte do elemento pai
+
+Caso especial ->
+    *% -> Depende do contexto (elemento pai) inserido

@@ -5,3 +5,24 @@ Display -> defini tipo de comportamento do elemento (inline, block e etc), se va
 box-sizing -> Você pode forçar o padding + borda + etc ... a se encaixar no tamanho que de fato você quer considerar
 overflow: hidden -> Esconde tudo que estrapolar o tamanho da box
 overflow: scrow -> Adiciona barras de rolagem para elementos que ultrapassem a
+
+
+position ->
+    static->Conteúdo
+    relative->Conteúdo
+    absolute->(Conteúdo + padding do elemento pai), quando elemento pai é relative. (ViewPort+respeita padding), quando elemento pai é estatic
+    fixed-> ViewPort + respeita padding do elemento pai
+
+font-family ->
+    monospace-> todas as letras de todas as fontes ocupam o mesmo espaço.
+    Georgia, serif-> fontes serifadas.
+    Verdana, sans-serif-> Mais quadrada
+    cursive-> Fontes cursivas.
+
+font-weight-> Espessura da fonte
+font-style-> italic, negrito, etc...
+text-decoration-> sublinhado, letras riscadas etc...
+word-spacing-> Espaçamento entre palavras.
+letter-space-> Espaçamento entre letras.
+line-height-> espaçamento entre linhas.
+text-align-> Alinhamento do texto(centro, justificado, etc...)
