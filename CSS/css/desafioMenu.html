@@ -14,7 +14,7 @@
         }
 
         .cabecalho {
-            display: flex;
+            /* display: flex; */
             height: 80px;
             width: 100vw;
             background-color: #1b1b1b;
@@ -23,9 +23,11 @@
         }
 
         .cabecalho .logo {
+            display: inline-block;
             margin-top: 8px;
             margin-left: 4px;
             box-sizing: inherit;
+            height: 100%;
         }
 
         .cabecalho .logo a img {
@@ -34,14 +36,22 @@
         }
 
         .cabecalho .menu {
+            display: inline-block;
             font-size: 22px;
+            text-align: center;
+            box-sizing: inherit;
+            margin-left: 20px;
+            vertical-align: top;
+            margin-top: 15px;
         }
 
         .cabecalho .menu ul {
+            /* padding: 0; */
+            margin: 0;
             padding: 0;
             display: flex;
-            margin-top: 13px;
-            text-align: center;
+            /* margin-top: 13px;
+            text-align: center; */
         }
 
         .cabecalho .menu ul li {
@@ -54,8 +64,15 @@
             text-decoration: none;
         }
 
+        /* .cabecalho .menu ul li a.selected {
+            background-color: #4faddb;
+        } */
+
         .cabecalho .autenticacao {
+            /* display: inline-block; */
+            float: right;
             margin-top: 18px;
+            margin-right: 10px;
             text-align: center;
             font-size: 22px;            
         }
@@ -79,12 +96,62 @@
         }
 
         .cabecalho .menu-toggle {
-            display: none;
+            float: right;
             width: 40px;
             height: 40px;
             border-radius: 5px;
             border-color: transparent;
+            margin: 18px;
             
+        }
+
+        .cabecalho .botaLogin {
+            background-color: unset;
+            border-radius: 25px;
+            padding-left: 11px;
+            padding-right: 11px;
+            padding-top: 5px;
+            padding-bottom: 8px;
+            text-align: center;
+        }
+
+        .menu li.selected {
+            background-color: #4faddb;
+        }
+        /* .menu li:hover {
+            background-color: #4faddb;
+            color: black;
+        } */
+
+        .menu a.selected {
+            color: black;
+        }
+        /* .menu a:hover {
+            background-color: #4faddb;
+            color: black;
+        } */
+
+        @media (min-width: 854px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        @media (max-width: 854px) {
+            .autenticacao {
+                display: none;
+            }
+        }
+
+        @media (max-width: 680px) {
+            .menu {
+                float: right;
+                /* display: block; */
+            }
+
+            .menu ul {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -116,19 +183,56 @@
             </ul>
         </nav>
         <aside class="autenticacao">
-            <a href="#login">Login</a>
+            <a href="#login" class="botaLogin">Login</a>
             <a href="#registar" class="botaoDestaque">Registrar</a>
         </aside>
     </header>
 
     <script>
+
+
+        window.onhashchange = (link) => {
+            let urlAntiga = link.oldURL.split('#')[1].trim();
+            let urlAtual = link.newURL.split('#')[1].trim();
+
+            let menuAntigo = document.querySelector(`.menu a[href='#${urlAntiga}']`);
+            let menuAtual = document.querySelector(`.menu a[href='#${urlAtual}']`);
+
+            
+            if(menuAntigo){
+                menuAntigo.classList.remove('selected');
+                menuAntigo.parentElement.classList.remove('selected');
+            }
+            if(menuAtual) {
+                menuAtual.classList.add('selected');
+                menuAtual.parentElement.classList.add('selected');
+            }
+            console.log(urlAntiga ,menuAntigo.classList);
+        }
         let opcoesMenu = document.getElementsByTagName('li');
 
-        opcoesMenu.forEach(element => {
-            element.addEventListener('click', (element)=> {
-                element.style.backgroundColor = "red";
-            })
+        for (let index = 0; index < opcoesMenu.length; index++) {
+            opcoesMenu[index].addEventListener('mouseenter', (element)=> {
+                if(!element.currentTarget.classList.contains('selected')) {
+                    element.currentTarget.style.backgroundColor = '#4faddb';
+                    element.currentTarget.children[0].style.color = 'black';
+                }
+            });
+            opcoesMenu[index].addEventListener('mouseleave', (element)=> {
+                if(!element.currentTarget.classList.contains('selected')) {
+                    element.currentTarget.style.backgroundColor = 'unset';
+                    element.currentTarget.children[0].style.color = 'white';
+                }
+            });
+        }
+
+        let botaoLogin = document.getElementsByClassName('botaLogin')[0];
+        botaoLogin.addEventListener('mouseenter', (element)=> {
+            element.currentTarget.style.backgroundColor = '#407ef1';
         });
+        botaoLogin.addEventListener('mouseleave', (element)=>{
+            element.currentTarget.style.backgroundColor = 'unset';
+        })
     </script>
 </body>
 
